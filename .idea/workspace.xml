@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="981d7eb0-1797-4b60-849a-109d075d6c01" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/basic_command.py" beforeDir="false" afterPath="$PROJECT_DIR$/basic_command.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qr_code_finder/qr_code_finder.py" beforeDir="false" afterPath="$PROJECT_DIR$/qr_code_finder/qr_code_finder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qr_code_finder/simple_find_contours.py" beforeDir="false" afterPath="$PROJECT_DIR$/qr_code_finder/simple_find_contours.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="26JYIl6K3jeCuHNkUwCwBJHEBU5" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="981d7eb0-1797-4b60-849a-109d075d6c01" name="Changes" comment="" />
+      <created>1647143089103</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1647143089103</updated>
+    </task>
+    <servers />
+  </component>
+</project>
