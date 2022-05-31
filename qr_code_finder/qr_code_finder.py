@@ -1,7 +1,7 @@
 import math
 import cv2
 import numpy as np
-import simple_find_contours as qr_finder
+import find_contours_new_version as qr_finder
 from djitellopy import tello
 import time
 
@@ -31,11 +31,11 @@ count_directionB = 0 #
 count_directionL = 0
 count_directionR = 0 #
 
-print('Taking off')                          # b - 3 rows below     -> '
-drone.takeoff()                              #
-# time.sleep(1)
-drone.send_rc_control(0, 0, 30, 0)
-time.sleep(2)
+# print('Taking off')                          # b - 3 rows below     -> '
+# drone.takeoff()                              #
+## time.sleep(1)
+# drone.send_rc_control(0, 0, 30, 0)
+# time.sleep(2)
 
 
 def trackQrCode(direction, distance, error):
@@ -60,24 +60,24 @@ def trackQrCode(direction, distance, error):
     # the time determine by the sleep. time.sleep(1) mean 1 seconds.
     # example : 20 -> 20 cm in 1 seconds.
     # So the drone will move forward 20 cm on 1 seconds
-    if pDistance != 0 and (math.fabs(distance - pDistance) > 30):
-        print('Detection failed -> Hover')  # temporary
-        drone.send_rc_control(0, 0, 0, 0)               # d - 7 rows below    -> '
-    elif direction == 'left' or direction == 'right':
-        drone.send_rc_control(lr, fb, 0, 0)
-    elif direction == 'forward' or direction == 'backward':
-        drone.send_rc_control(lr, fb, 0, 0)
-    else:
-        drone.send_rc_control(0, 0, 0, 0)
+    # if pDistance != 0 and (math.fabs(distance - pDistance) > 30):
+    #     print('Detection failed -> Hover')  # temporary
+    #     drone.send_rc_control(0, 0, 0, 0)               # d - 7 rows below    -> '
+    # elif direction == 'left' or direction == 'right':
+    #     drone.send_rc_control(lr, fb, 0, 0)
+    # elif direction == 'forward' or direction == 'backward':
+    #     drone.send_rc_control(lr, fb, 0, 0)
+    # else:
+    #     drone.send_rc_control(0, 0, 0, 0)
 
 
 def land():
     print('Mission Completed!')
-    drone.send_rc_control(0, 0, 0, 0)               # g - 2 row below   -> '
-    # time.sleep(0.2)
-    drone.land()
+    # drone.send_rc_control(0, 0, 0, 0)               # g - 2 row below   -> '
+    ## time.sleep(0.2)
+    # drone.land()
     drone.streamoff()
-    cv2.destroyAllWindows()
+    # cv2.destroyAllWindows()
 
 
 while True:
@@ -98,7 +98,7 @@ while True:
 
         # get command for the drone
         if direction == 'hover':
-            drone.send_rc_control(0, 0, 0, 0)
+            # drone.send_rc_control(0, 0, 0, 0)
             qr_data = qr_finder.qr_code_decoder(img)
             print('QR Data is : {}'.format(qr_data))
 
@@ -115,9 +115,6 @@ while True:
             pError_roll = error
         elif direction == 'forward' or direction == 'backward':
             pError_pitch = error
-        # else:
-        #     pError_roll = 0.0
-        #     pError_pitch = 0.0
         pDistance = distance
         pDirection = direction
 
@@ -129,40 +126,18 @@ while True:
         if pDirection == 'forward':                 # f (if and else)        -> '
             if count_directionF < 5:
                 print('Move Forward')
-                drone.send_rc_control(0, -10, 0, 0)
+                # drone.send_rc_control(0, -10, 0, 0)
                 time.sleep(0.1)
                 count_directionF += 1
             else:
                 print('Move Backward')
-                drone.send_rc_control(0, 10, 0, 0)
+                # drone.send_rc_control(0, 10, 0, 0)
                 time.sleep(0.1)
                 if count_directionF == 9:
                     count_directionF = 0
-        # elif pDirection == 'left':
-        #     if count_directionL == 0:
-        #         print('Move Right')
-        #         drone.send_rc_control(10, 0, 0, 0)
-        #         time.sleep(0.5)
-        #         count_directionL += 1
-        #     else:
-        #         print('Move Left')
-        #         drone.send_rc_control(-10, 0, 0, 0)
-        #         time.sleep(1)
-        #         count_directionL = 0
-        # elif pDirection == 'right':
-        #     if count_directionR == 0:
-        #         print('Move Left')
-        #         drone.send_rc_control(-10, 0, 0, 0)
-        #         time.sleep(0.5)
-        #         count_directionR += 1
-        #     else:
-        #         print('Move Right')
-        #         drone.send_rc_control(10, 0, 0, 0)
-        #         time.sleep(1)
-        #         count_directionR = 0
         else:
-            drone.send_rc_control(0, 0, 0, 0)
-        # pass  # 3
+            # drone.send_rc_control(0, 0, 0, 0)
+            pass  # 3
 
     # cv2.imshow('Edged', edged)
     cv2.imshow('Output', frame)
